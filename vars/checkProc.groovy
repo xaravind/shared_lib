@@ -1,4 +1,9 @@
 def call() {
-    cat "/proc/cpuinfo"
-    sh "java -version"
+    stage('Check CPU Info') {
+        sh 'cat /proc/cpuinfo'
+    }
+
+    stage('Check Java Version') {
+        sh 'java -version'
+    }
 }
